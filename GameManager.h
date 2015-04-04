@@ -55,12 +55,19 @@ private:
 	char doLevelIterations();
 	bool doIteration();
 	bool doInputIteration();
+
+	//Edited code here
+	void printInstructions() const;
+	char subMenu() const;
+	void clearSubMenu() const;
+	//End of edited code
+
 public:
 	class MainMenuOptions
 	{
 	public:
 		static bool isValidOption(char option) {
-			string validOptions = "1239";
+			string validOptions = "12309";
 			return (validOptions.find(option) != string::npos);
 		}
 		enum
@@ -68,14 +75,15 @@ public:
 			PRESENT_INSTRUCTIONS		=	'1',
 			PLAY_GAME					=	'2',
 			PLAY_FROM_SELECTED_SCREEN	=	'3',
-			EXIT_APPLICATION			=	'9'
+			EXIT_APPLICATION			=	'9',
+			PRINT_SUB_MENU              =   '0'
 		};
 	};
 	class LevelOptions
 	{
 	public:
 		static bool isValidOption(char option) {
-			string validOptions = "1389";
+			string validOptions = "12345";
 			return (validOptions.find(option) != string::npos);
 		}
 		enum

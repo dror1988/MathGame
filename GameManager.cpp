@@ -31,15 +31,19 @@ using namespace std;
 
 char GameManager::mainMenu()const
 {
-	// TODO: you may want to improve the menu appearance
-	cout << "1. instructions" << endl;
-	cout << "2. play game" << endl;
-	cout << "3. start from a specific level" << endl;
-	cout << "9. exit" << endl;
+	setTextColor(LIGHTCYAN);
+	cout<<"	Math Game - Main Menu"<<endl;
+	cout<<"	====================="<<endl<<endl;
+
+	cout << "1. Game Instructions" << endl;
+	cout << "2. Start A New Game" << endl;
+	cout << "3. Start A New Game From A Specific Level" << endl;
+	cout << "9. Exit" << endl;
 	char selection = 0;
 	do {
 		selection = _getch();
 	} while(!GameManager::MainMenuOptions::isValidOption(selection));
+	setTextColor(WHITE);
 	return selection;
 }
 
@@ -54,14 +58,61 @@ void GameManager::run()
 		{
 		case GameManager::MainMenuOptions::PLAY_GAME:
 			init();
+			//We need to add creation of 2 players in here
 			userWantsToPlay = playGame();
+			break;
+		case GameManager::MainMenuOptions::PLAY_FROM_SELECTED_SCREEN:
+			//should use chooseLevelToStart() function to print a dialog from which level to start the game
+			//and to init GameManager::currentLevel to the specific level
+			//We need to add creation of 2 players in here
+			userWantsToPlay = playGame();
+			break;
+		case GameManager::MainMenuOptions::PRESENT_INSTRUCTIONS:
+			//write instructions to the screen, make the instructions have an ESC char so that the
+			//screen will be cleared and the main menu should be printed again
+			printInstructions();
 			break;
 		case GameManager::MainMenuOptions::EXIT_APPLICATION:
 			userWantsToPlay = false;
 			break;
+		case GameManager::MainMenuOptions::PRINT_SUB_MENU:
+			subMenu();
+			break;
 		default: // normally we shouldn't get to here...
 			userWantsToPlay = false;
 		};
+	}
+}
+
+char  GameManager::subMenu() const{
+	gotoxy(0,17);
+	setTextColor(RED);
+	cout<<"================================================================================"<<endl;
+	cout<<"                                    PAUSE                                       "<<endl;
+	cout<<"1.Exit   2.Back to MainMenu   3.Continue   4.Replay Current Level   5.Skip Level"<<endl;
+	cout<<"================================================================================";
+	char selection = 0;
+	do {
+		selection = _getch();
+	} while(!GameManager::LevelOptions::isValidOption(selection));
+	setTextColor(WHITE);
+	clear_screen();
+	return selection;
+}
+
+void GameManager::printInstructions() const{
+	clear_screen();
+	cout<<"	Math Game - Instructions"<<endl;
+	cout<<"	========================"<<endl<<endl;
+	cout<<"This game is our first home project in C++"<<endl;
+	cout<<"All kind of bull shit"<<endl;
+	gotoxy(0,20);
+	cout<<"Press ESC to return to the Main Menu"<<endl;
+	while (!kbhit()){
+		if (getch()==27){
+			clear_screen();
+			return;
+		}
 	}
 }
 
@@ -89,6 +140,9 @@ char GameManager::playNextLevel()
 {
 	++currentLevel;
 	actualGame.startLevel();
+	//in start level we need to create a new SCREEN object that gets the following for creation:
+	//Screen newScreen(int level,Player &p1, Player &p2)
+
 	
 	//------------------------------------------------------------------------------
 	// here we control the ESC menu
@@ -199,9 +253,15 @@ bool GameManager::doInputIteration()
 			}
 		}
 	}
+
 	// send the keystrokes to the game
 	// (even if ESC was hit, we may still have something in the keystrokes vector and should use it)
 	actualGame.doIteration(keyHits);
+
+	//=================================================================
+	//this is the code for running on the keyhits
+	for (list<char>::iterator itr=keyHits.begin(); itr!=keyHits.end(); ++itr)
+		cout<<*itr; //need to change from cout to actual action
 
 	return shouldContinue;
 }

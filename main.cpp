@@ -28,6 +28,8 @@
 
 
 #include <iostream>
+#include <stdlib.h>
+#include <time.h>
 #include "GameManager.h"
 #include "io_utils.h"
 
@@ -52,6 +54,7 @@ public:
 int main(){
 	clear_screen();
 	hideCursor();
+	srand((unsigned int)time(NULL));
 	GameManager(TheMathGame(), 200, 2).run();
 	return 0;
 }

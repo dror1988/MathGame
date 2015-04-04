@@ -34,7 +34,7 @@ void hideCursor()
 	 CONSOLE_CURSOR_INFO CURSOR;
 	 CURSOR.dwSize = 1;
 	 CURSOR.bVisible = FALSE;
-	 SetConsoleCursorInfo(myconsole, &CURSOR);//second argument need pointer
+	 SetConsoleCursorInfo(myconsole, &CURSOR); //second argument need pointer
 }
 
 void clear_screen()
