@@ -1,27 +1,19 @@
-﻿Build started 04/04/2015 17:57:06.
-     1>Project "C:\Users\Moyal's\Desktop\MathGame\MathGameProject\MathGameProject\MathGameProject.vcxproj" on node 2 (build target(s)).
-     1>InitializeBuildStatus:
-         Touching "Debug\MathGameProject.unsuccessfulbuild".
-       ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\GameManager.cpp
+﻿Build started 4/5/2015 6:00:57 PM.
+     1>Project "C:\Users\drorm\Desktop\MathGame\MathGameProject\MathGameProject\MathGameProject.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\GameManager.cpp ..\..\io_utils.cpp ..\..\main.cpp Player.cpp
+         Player.cpp
+     1>c:\users\drorm\desktop\mathgame\mathgameproject\mathgameproject\player.h(4): fatal error C1083: Cannot open include file: 'Direction.h': No such file or directory
+         main.cpp
+         io_utils.cpp
          GameManager.cpp
-     1>c:\users\moyal's\desktop\mathgame\gamemanager.cpp(109): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _kbhit. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\conio.h(130) : see declaration of 'kbhit'
-     1>c:\users\moyal's\desktop\mathgame\gamemanager.cpp(110): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\conio.h(128) : see declaration of 'getch'
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Moyal's\Desktop\MathGame\MathGameProject\Debug\MathGameProject.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\MathGameProject.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Moyal's\Desktop\MathGame\MathGameProject\Debug\MathGameProject.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Moyal's\Desktop\MathGame\MathGameProject\Debug\MathGameProject.lib" /MACHINE:X86 Debug\GameManager.obj
-         Debug\io_utils.obj
-         Debug\main.obj
-     1>GameManager.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/INCREMENTAL:NO' specification
-         MathGameProject.vcxproj -> C:\Users\Moyal's\Desktop\MathGame\MathGameProject\Debug\MathGameProject.exe
-       Manifest:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\Moyal's\Desktop\MathGame\MathGameProject\Debug\MathGameProject.exe;#1" /manifest Debug\MathGameProject.exe.intermediate.manifest
-       FinalizeBuildStatus:
-         Deleting file "Debug\MathGameProject.unsuccessfulbuild".
-         Touching "Debug\MathGameProject.lastbuildstate".
-     1>Done Building Project "C:\Users\Moyal's\Desktop\MathGame\MathGameProject\MathGameProject\MathGameProject.vcxproj" (build target(s)).
+     1>c:\users\drorm\desktop\mathgame\gamemanager.cpp(111): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _kbhit. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\conio.h(133) : see declaration of 'kbhit'
+     1>c:\users\drorm\desktop\mathgame\gamemanager.cpp(112): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\conio.h(131) : see declaration of 'getch'
+         Generating Code...
+     1>Done Building Project "C:\Users\drorm\Desktop\MathGame\MathGameProject\MathGameProject\MathGameProject.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:00.94
+Time Elapsed 00:00:05.22
