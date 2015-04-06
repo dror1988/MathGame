@@ -75,7 +75,6 @@ int main(){
 	else
 		cout << "false" << endl;
 
-	/*
 	Direction dr1;
 	dr1.value = Direction::DOWN;
 	Player p1('#', dr1,Point(0,0));
@@ -108,11 +107,10 @@ int main(){
 	p1.setScore(21);
 	p1.setLives(14);
 	p1.setPosition(Point(9,8));
-	dr1.value = Direction::LEFT;
-	p1.setDirection(dr1);
+	p1.changeDirection('a');
 
-	po1.x=69;
-	po1.y = 96;
+	po1.x=79;
+	po1.y = 23;
 	p1.setPosition(po1);
 	po1 = p1.getPosition();
 	cout << "p1.x=" << po1.x << " p1.y=" << po1.y << endl;
@@ -134,7 +132,21 @@ int main(){
 		cout << "Direction is RIGHT" << endl;
 		break;
 	}
-	*/
+	
+
+	//run on screen code
+	clear_screen();
+	char ch=0;
+	while (ch != 27){
+		if (_kbhit()){
+			ch = _getch();
+			p1.changeDirection(ch);
+		}
+		p1.playerMove();
+		Sleep(50);
+	}
+
+	//end of run on screen code
 	
 	//===================
 	// E N D   T E S T

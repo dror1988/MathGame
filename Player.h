@@ -35,8 +35,12 @@ public:
 	unsigned int setScore(unsigned int newScore);
 	unsigned int setLives(unsigned int newLives);
 	Point setPosition(Point newPosition);
-	Direction setDirection(Direction newDirection);
+	void changeDirection(char newDirection);
 	Exercise* createExercise(int currentLevel);
+
+	void playerDraw();
+	void playerErase();
+	void playerMove();
 };
 
 #endif
