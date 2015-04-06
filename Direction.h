@@ -14,6 +14,7 @@
 // ------------------------
 // DATE           Authors                 Change / Addition
 // ----           --------                -----------------
+//6/4/2015		Dror Moyal					added line 38 to make direction work properly
 // In the file itself, add above each change/addition a remark saying: "NEW CODE EX1, author=<name>, date=<YYYY-MM-DD>"
 // and close it at the end with a remark saying "END of NEW CODE EX1" 
 //
@@ -26,7 +27,7 @@
 class Direction
 {
 public:
-	enum value
+	enum VALUE
 	{
 		UP,
 		RIGHT,
@@ -34,6 +35,9 @@ public:
 		LEFT,
 		STAY
 	};
+	//new code
+	VALUE value;
+	//end of new code
 };
 
 #endif

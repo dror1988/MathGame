@@ -1,9 +1,12 @@
 #ifndef __PLAYER_H
 #define __PLAYER_H
 
+#include <string>
 #include "Direction.h"
 #include "Exercise.h"
 #include "Point.h"
+
+using namespace std;
 
 class Player{
 	unsigned char playerChar;
@@ -14,8 +17,8 @@ class Player{
 	Exercise* playerExercise;
 	Point playerPosition;
 public:
-	Player(unsigned char playerChar, Direction playerDirection, Point playerPosition)
-		:playerChar(playerChar), playerScore(0), playerLives(3), isPlayerAlive(true), playerDirection(playerDirection),
+	Player(unsigned char playerChar, Direction playerDirection1, Point playerPosition)
+		:playerChar(playerChar), playerScore(0), playerLives(3), isPlayerAlive(true), playerDirection(playerDirection1),
 		playerPosition(playerPosition), playerExercise(NULL){
 	}
 	~Player(){
@@ -27,7 +30,7 @@ public:
 	unsigned int getLives();
 	Point getPosition(); 
 	Direction getDirection();
-	Exercise* getExercise();
+	string getExercise();
 
 	unsigned int setScore(unsigned int newScore);
 	unsigned int setLives(unsigned int newLives);

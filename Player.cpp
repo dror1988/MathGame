@@ -12,8 +12,11 @@ Point Player::getPosition(){
 Direction Player::getDirection(){
 	return playerDirection;
 }
-Exercise* Player::getExercise(){
-	return playerExercise;
+string Player::getExercise(){
+	if (playerExercise != NULL)
+		return playerExercise->getExercise();
+	else
+		return "";
 }
 
 unsigned int Player::setScore(unsigned int newScore){

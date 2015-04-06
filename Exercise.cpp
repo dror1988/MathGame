@@ -13,11 +13,11 @@ Exercise::Exercise(int currentLvl){
 		action = '+';
 		result = leftNum + rightNum;
 		if (numToHide == 0){
-			strExercise = "_" + to_string(action) + to_string(rightNum) + "=" + to_string(result);
+			strExercise = "_" + string(1,action) + to_string(rightNum) + "=" + to_string(result);
 			hiddenNumber = leftNum;
 		}
 		else{
-			strExercise = to_string(leftNum) + to_string(action) + "_" + "=" + to_string(result);
+			strExercise = to_string(leftNum) + string(1, action) + "_" + "=" + to_string(result);
 			hiddenNumber = rightNum;
 		}
 		break;
@@ -27,11 +27,11 @@ Exercise::Exercise(int currentLvl){
 		rightNum = leftNum;
 		leftNum = result + rightNum; // according to the "targil" logic
 		if (numToHide == 0){
-			strExercise = to_string(leftNum) + to_string(action) + to_string(rightNum) + "=" + "_";
+			strExercise = to_string(leftNum) + string(1, action) + to_string(rightNum) + "=" + "_";
 			hiddenNumber = result;
 		}
 		else{
-			strExercise = to_string(leftNum) + to_string(action) + "_" + "=" + to_string(result);
+			strExercise = to_string(leftNum) + string(1, action) + "_" + "=" + to_string(result);
 			hiddenNumber = rightNum;
 		}
 		break;
@@ -39,11 +39,11 @@ Exercise::Exercise(int currentLvl){
 		action = '*';
 		result = leftNum * rightNum;
 		if (numToHide == 0){
-			strExercise = "_" + to_string(action) + to_string(rightNum) + "=" + to_string(result);
+			strExercise = "_" + to_string(action) + string(1, action) + "=" + to_string(result);
 			hiddenNumber = leftNum;
 		}
 		else{
-			strExercise = to_string(leftNum) + to_string(action) + "_" + "=" + to_string(result);
+			strExercise = to_string(leftNum) + string(1, action) + "_" + "=" + to_string(result);
 			hiddenNumber = rightNum;
 		}
 		break;
@@ -53,11 +53,11 @@ Exercise::Exercise(int currentLvl){
 		rightNum = leftNum;
 		leftNum = result * rightNum; // according to the "targil" logic
 		if (numToHide == 0){
-			strExercise = to_string(leftNum) + to_string(action) + to_string(rightNum) + "=" + "_";
+			strExercise = to_string(leftNum) + string(1, action) + to_string(rightNum) + "=" + "_";
 			hiddenNumber = result;
 		}
 		else{
-			strExercise = to_string(leftNum) + to_string(action) + "_" + "=" + to_string(result);
+			strExercise = to_string(leftNum) + string(1, action) + "_" + "=" + to_string(result);
 			hiddenNumber = rightNum;
 		}
 		break;
