@@ -132,7 +132,7 @@ int main(){
 
 	//run on screen code
 	clear_screen();
-	char ch=0;
+	char ch = 0;/*
 	while (ch != 27){
 		if (_kbhit()){
 			ch = _getch();
@@ -162,10 +162,47 @@ int main(){
 			}
 		}
 		p1.playerMove();
-		Sleep(50);
+		Sleep(100);
+	}
+	*/
+	//end of run on screen code
+
+	//run reverse on screen code
+	clear_screen();
+	ch = 0;
+	while (ch != 27){
+		if (_kbhit()){
+			ch = _getch();
+			switch (ch){
+			case 'i':
+				//p2.changeDirection(Direction::UP);
+			case 'w':
+				p1.changeDirection(Direction::UP);
+				break;
+			case 'j':
+				//p2.changeDirection(Direction::LEFT);
+			case 'a':
+				p1.changeDirection(Direction::LEFT);
+				break;
+			case 'm':
+				//p2.changeDirection(Direction::DOWN);
+			case 'x':
+				p1.changeDirection(Direction::DOWN);
+				break;
+			case 'l':
+				//p2.changeDirection(Direction::RIGHT);
+			case 'd':
+				p1.changeDirection(Direction::RIGHT);
+				break;
+			default:
+				break;
+			}
+		}
+		p1.playerReverseMove();
+		Sleep(100);
 	}
 
-	//end of run on screen code
+	//end of run reverse on screen code
 	
 	//===================
 	// E N D   T E S T

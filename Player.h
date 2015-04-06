@@ -40,7 +40,20 @@ public:
 
 	void playerDraw()const;
 	void playerErase()const;
+	
+	//Function that computes the movement of a player according to the players direction
 	void playerMove();
+	//Function used to go back if the 2 players colide
+	void playerReverseMove();
+	/*The use of the functions above are is something like this:
+	
+	p1.playerMove();
+	if (p1.getPosition()==p2.getPosition())
+		p1.playerReverseMove();
+	p1.playerDraw();
+
+	*/
+
 };
 
 #endif

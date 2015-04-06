@@ -52,9 +52,8 @@ void Player::playerErase()const{
 	gotoxy(playerPosition.x, playerPosition.y);
 	cout << ' ';
 }
-
 void Player::playerMove(){
-	playerErase();
+	//playerErase();
 
 	switch (playerDirection){
 	case Direction::UP:
@@ -85,5 +84,39 @@ void Player::playerMove(){
 		break;
 	}
 
-	playerDraw();
+	//playerDraw();
+}
+void Player::playerReverseMove(){
+	//playerErase();
+
+	switch (playerDirection){
+	case Direction::UP:
+		if (playerPosition.y < Point::maxY)
+			playerPosition.y++;
+		else
+			playerPosition.y = Point::minY;
+		break;
+	case Direction::DOWN:
+		if (playerPosition.y > Point::minY)
+			playerPosition.y--;
+		else
+			playerPosition.y = Point::maxY;
+		break;
+	case Direction::LEFT:
+		if (playerPosition.x < Point::maxX)
+			playerPosition.x++;
+		else
+			playerPosition.x = Point::minX;
+		break;
+	case Direction::RIGHT:
+		if (playerPosition.x > Point::minX)
+			playerPosition.x--;
+		else
+			playerPosition.x = Point::maxX;
+		break;
+	case Direction::STAY:
+		break;
+	}
+
+	//playerDraw();
 }
