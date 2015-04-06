@@ -85,12 +85,23 @@ void GameManager::run()
 }
 
 char  GameManager::subMenu() const{
-	gotoxy(0,17);
 	setTextColor(RED);
-	cout<<"================================================================================"<<endl;
-	cout<<"                                    PAUSE                                       "<<endl;
-	cout<<"1.Exit   2.Back to MainMenu   3.Continue   4.Replay Current Level   5.Skip Level"<<endl;
-	cout<<"================================================================================";
+	gotoxy(28,9);
+	cout<<" ========================= ";
+	gotoxy(28, 10);
+	cout<<"|       PAUSE GAME        |";
+	gotoxy(28, 11);
+	cout<<"| 1.Exit                  |";
+	gotoxy(28, 12);
+	cout<<"| 2.Back to Main Menu     |";
+	gotoxy(28, 13);
+	cout<<"| 3.Continue              |";
+	gotoxy(28, 14);
+	cout<<"| 4.Replay Current Level  |";
+	gotoxy(28, 15);
+	cout<<"| 5.Skip Level            |";
+	gotoxy(28, 16);
+	cout<<" ========================= ";
 	char selection = 0;
 	do {
 		selection = _getch();
