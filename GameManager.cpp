@@ -108,8 +108,8 @@ void GameManager::printInstructions() const{
 	cout<<"All kind of bull shit"<<endl;
 	gotoxy(0,20);
 	cout<<"Press ESC to return to the Main Menu"<<endl;
-	while (!kbhit()){
-		if (getch()==27){
+	while (!_kbhit()){
+		if (_getch()==27){
 			clear_screen();
 			return;
 		}
