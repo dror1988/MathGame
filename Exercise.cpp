@@ -13,11 +13,11 @@ Exercise::Exercise(int currentLvl){
 		action = '+';
 		result = leftNum + rightNum;
 		if (numToHide == 0){
-			strExercise = "_" + string(1,action) + to_string(rightNum) + "=" + to_string(result);
+			strExercise = "_" + string(1,action) + to_string(static_cast<long long>(rightNum)) + "=" + to_string(static_cast<long long>(result));
 			hiddenNumber = leftNum;
 		}
 		else{
-			strExercise = to_string(leftNum) + string(1, action) + "_" + "=" + to_string(result);
+			strExercise = to_string(static_cast<long long>(leftNum)) + string(1, action) + "_" + "=" + to_string(static_cast<long long>(result));
 			hiddenNumber = rightNum;
 		}
 		break;
@@ -27,11 +27,11 @@ Exercise::Exercise(int currentLvl){
 		rightNum = leftNum;
 		leftNum = result + rightNum; // according to the "targil" logic
 		if (numToHide == 0){
-			strExercise = to_string(leftNum) + string(1, action) + to_string(rightNum) + "=" + "_";
+			strExercise = to_string(static_cast<long long>(leftNum)) + string(1, action) + to_string(static_cast<long long>(rightNum)) + "=" + "_";
 			hiddenNumber = result;
 		}
 		else{
-			strExercise = to_string(leftNum) + string(1, action) + "_" + "=" + to_string(result);
+			strExercise = to_string(static_cast<long long>(leftNum)) + string(1, action) + "_" + "=" + to_string(static_cast<long long>(result));
 			hiddenNumber = rightNum;
 		}
 		break;
@@ -39,11 +39,11 @@ Exercise::Exercise(int currentLvl){
 		action = '*';
 		result = leftNum * rightNum;
 		if (numToHide == 0){
-			strExercise = "_" + string(1, action) + to_string(rightNum) + "=" + to_string(result);
+			strExercise = "_" + string(1,action) + to_string(static_cast<long long>(rightNum)) + "=" + to_string(static_cast<long long>(result));
 			hiddenNumber = leftNum;
 		}
 		else{
-			strExercise = to_string(leftNum) + string(1, action) + "_" + "=" + to_string(result);
+			strExercise = to_string(static_cast<long long>(leftNum)) + string(1, action) + "_" + "=" + to_string(static_cast<long long>(result));
 			hiddenNumber = rightNum;
 		}
 		break;
@@ -53,11 +53,11 @@ Exercise::Exercise(int currentLvl){
 		rightNum = leftNum;
 		leftNum = result * rightNum; // according to the "targil" logic
 		if (numToHide == 0){
-			strExercise = to_string(leftNum) + string(1, action) + to_string(rightNum) + "=" + "_";
+			strExercise = to_string(static_cast<long long>(leftNum)) + string(1, action) + to_string(static_cast<long long>(rightNum)) + "=" + "_";
 			hiddenNumber = result;
 		}
 		else{
-			strExercise = to_string(leftNum) + string(1, action) + "_" + "=" + to_string(result);
+			strExercise = to_string(static_cast<long long>(leftNum)) + string(1, action) + "_" + "=" + to_string(static_cast<long long>(result));
 			hiddenNumber = rightNum;
 		}
 		break;

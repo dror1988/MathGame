@@ -32,6 +32,7 @@ using namespace std;
 char GameManager::mainMenu()const
 {
 	setTextColor(LIGHTCYAN);
+	clear_screen();
 	cout<<"	Math Game - Main Menu"<<endl;
 	cout<<"	====================="<<endl<<endl;
 
@@ -112,18 +113,98 @@ char  GameManager::subMenu() const{
 }
 
 void GameManager::printInstructions() const{
+	char selection = 0;
+
 	clear_screen();
-	cout<<"	Math Game - Instructions"<<endl;
-	cout<<"	========================"<<endl<<endl;
-	cout<<"This game is our first home project in C++"<<endl;
-	cout<<"All kind of bull shit"<<endl;
-	gotoxy(0,20);
-	cout<<"Press ESC to return to the Main Menu"<<endl;
+	cout<<"              Math Game - Instructions (1)                                 "<<endl;
+	cout<<"              ============================                                 "<<endl;
+	cout<<"This is a game involving both speed, accuracy and quick thinking.          "<<endl;
+	cout<<"In the Main Menu, you can choose from 2 options -                          "<<endl;
+	cout<<"  * Start the game from the very beginning (Level 1)                     "<<endl;
+	cout<<"  * Start the game from a specified level                                 "<<endl;
+	cout<<endl;
+	cout<<"In each level you will face harder and harder Math Problems.               "<<endl;
+	cout<<"At the beginning of each level, the game will randomly create a Math       "<<endl;
+	cout<<"Problem using the following logic:                                         "<<endl;
+	cout<<"  The game will randomly choose 2 numbers and an operator (+,-,*,/).       "<<endl;
+	cout<<"  If the operator will be \"+\" or \"*\" the Math Problem look like one of the "<<endl;
+	cout<<"  following:                                                               "<<endl;
+	cout<<"     * Num1 (+ or *) ____ = Result                                         "<<endl;
+	cout<<"     * ____ (+ or *) Num2 = Result                                         ";
+	gotoxy(0,23);
+	cout<<"Press (Space) to see more, Press (q) to quit                               ";
+	selection = 0;
+	do {
+		selection = _getch();
+	} while(selection!=32 && selection!='q');
+	if (selection=='q')
+		return;
+
+	clear_screen();
+	cout<<"              Math Game - Instructions (2)                                 "<<endl;
+	cout<<"              ============================                                 "<<endl;
+	cout<<"  If the operator will be \"-\" or \"/\" the Math Problem look like one of the "<<endl;
+	cout<<"  following:                                                               "<<endl;
+	cout<<"     * Num1 (- or /) ____ = Result                                         "<<endl;
+	cout<<"     * Num1 (- or /) Num2 = ______                                         "<<endl;
+	cout<<endl;
+	cout<<"Each player will get a different (not promised) Math Problem that he will  "<<endl;
+	cout<<"need to solve by eating the correct number from the numbers that will pop  "<<endl;
+	cout<<"to the screen during the game.                                             "<<endl;
+	cout<<"When a player will eat the correct number, he will get 1 Point and players "<<endl;
+	cout<<"will be forwarded to the next level. There are total of 20 levels.         "<<endl;
+	cout<<endl;
+	cout<<"Eating a wrong number will cause the player to loose 1 Life. Each player   "<<endl;
+	cout<<"will start each level with 3 lives. If a player will loose all lives during"<<endl;
+	cout<<"a level his character will disappear until the end of the level.           ";
+	gotoxy(0,23);
+	cout<<"Press (Space) to see more, Press (q) to quit                               ";
+	selection = 0;
+	do {
+		selection = _getch();
+	} while(selection!=32 && selection!='q');
+	if (selection=='q')
+		return;
+
+	clear_screen();
+	cout<<"              Math Game - Instructions (3)                                 "<<endl;
+	cout<<"              ============================                                 "<<endl;
+	cout<<"Players can travel on the screen to all 4 directions:                      "<<endl;
+	cout<<"Up, Down, Left and Right.                                                  "<<endl;
+	cout<<endl;
+	cout<<"Player Controls:                                                           "<<endl;
+	cout<<" * Player-1 (Using \"@\" character):                                       "<<endl;
+	cout<<"    - UP      = w                                                          "<<endl;
+	cout<<"    - DOWN    = x                                                          "<<endl;
+	cout<<"    - LEFT    = a                                                          "<<endl;
+	cout<<"    - RIGHT   = d                                                          "<<endl;
+	cout<<" * Player-2 (Using \"#\" character):                                       "<<endl;
+	cout<<"    - UP      = i                                                          "<<endl;
+	cout<<"    - DOWN    = m                                                          "<<endl;
+	cout<<"    - LEFT    = j                                                          "<<endl;
+	cout<<"    - RIGHT   = l                                                          "<<endl;
+	cout<<endl;
+	cout<<"GOOD LUCK!!!!                                                              ";
+	gotoxy(0,23);
+	cout<<"Press (Space) to see more, Press (q) to quit                               ";
+	selection = 0;
+	do {
+		selection = _getch();
+	} while(selection!=32 && selection!='q');
+	if (selection=='q')
+		return;
+
+	clear_screen();
+	cout<<"                       Math Game - About                                   "<<endl;
+	cout<<"                       =================                                   "<<endl;
+	cout<<"This is \"The Math Game\" - Our very first OOP project implemented in C++.   "<<endl;
+	cout<<endl;
+	cout<<"                    Authors of the game are:                               "<<endl;
+	cout<<"                     * Dror Moyal 301821682                                "<<endl;
+	cout<<"                     * Maya Bugana                                         "<<endl;
+	gotoxy(0,23);
+	cout<<"Press any key to go back to Main Menu...";
 	while (!_kbhit()){
-		if (_getch()==27){
-			clear_screen();
-			return;
-		}
 	}
 }
 
