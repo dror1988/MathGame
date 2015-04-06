@@ -5,7 +5,6 @@
 using namespace std;
 
 class Point{
-	
 public:
 	enum {
 		minX = 0,

@@ -75,12 +75,9 @@ int main(){
 	else
 		cout << "false" << endl;
 
-	Direction dr1;
-	dr1.value = Direction::DOWN;
-	Player p1('#', dr1,Point(0,0));
+	Player p1('#', Direction::DOWN, Point(0, 0));
 	cout << "Score: "<<p1.getScore() << " Lives:" << p1.getLives() << endl;
-	dr1 = p1.getDirection();
-	switch (dr1.value){
+	switch (p1.getDirection()){
 	case Direction::UP:
 		cout << "Direction is UP" << endl;
 		break;
@@ -107,7 +104,7 @@ int main(){
 	p1.setScore(21);
 	p1.setLives(14);
 	p1.setPosition(Point(9,8));
-	p1.changeDirection('a');
+	p1.changeDirection(Direction::LEFT);
 
 	po1.x=79;
 	po1.y = 23;
@@ -117,8 +114,7 @@ int main(){
 
 
 	cout << "Score: " << p1.getScore() << " Lives:" << p1.getLives() << endl;
-	dr1 = p1.getDirection();
-	switch (dr1.value){
+	switch (p1.getDirection()){
 	case Direction::UP:
 		cout << "Direction is UP" << endl;
 		break;
@@ -140,7 +136,30 @@ int main(){
 	while (ch != 27){
 		if (_kbhit()){
 			ch = _getch();
-			p1.changeDirection(ch);
+			switch (ch){
+			case 'i':
+				//p2.changeDirection(Direction::UP);
+			case 'w':
+				p1.changeDirection(Direction::UP);
+				break;
+			case 'j':
+				//p2.changeDirection(Direction::LEFT);
+			case 'a':
+				p1.changeDirection(Direction::LEFT);
+				break;
+			case 'm':
+				//p2.changeDirection(Direction::DOWN);
+			case 'x':
+				p1.changeDirection(Direction::DOWN);
+				break;
+			case 'l':
+				//p2.changeDirection(Direction::RIGHT);
+			case 'd':
+				p1.changeDirection(Direction::RIGHT);
+				break;
+			default:
+				break;
+			}
 		}
 		p1.playerMove();
 		Sleep(50);

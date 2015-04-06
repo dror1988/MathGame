@@ -1,19 +1,19 @@
 #include "Player.h"
 #include "io_utils.h"
 
-unsigned int Player::getScore(){
+unsigned int Player::getScore()const{
 	return playerScore;
 }
-unsigned int Player::getLives(){
+unsigned int Player::getLives()const{
 	return playerLives;
 }
-Point Player::getPosition(){
+Point Player::getPosition()const{
 	return playerPosition;
 }
-Direction Player::getDirection(){
+Direction::VALUE Player::getDirection()const{
 	return playerDirection;
 }
-string Player::getExercise(){
+string Player::getExercise()const{
 	if (playerExercise != NULL)
 		return playerExercise->getExercise();
 	else
@@ -32,27 +32,8 @@ Point Player::setPosition(Point newPosition){
 	playerPosition = newPosition;
 	return playerPosition;
 }
-void Player::changeDirection(char newDirection){
-	switch (newDirection){
-	case 'i':
-	case 'w':
-		playerDirection.value = Direction::UP;
-		break;
-	case 'j':
-	case 'a':
-		playerDirection.value = Direction::LEFT;
-		break;
-	case 'm':
-	case 'x':
-		playerDirection.value = Direction::DOWN;
-		break;
-	case 'l':
-	case 'd':
-		playerDirection.value = Direction::RIGHT;
-		break;
-	default:
-		break;
-	}
+void Player::changeDirection(Direction::VALUE newDirection){
+	playerDirection = newDirection;
 }
 Exercise* Player::createExercise(int currentLevel){
 	if (playerExercise == NULL){
@@ -63,11 +44,11 @@ Exercise* Player::createExercise(int currentLevel){
 		return NULL;
 }
 
-void Player::playerDraw(){
+void Player::playerDraw() const{
 	gotoxy(playerPosition.x, playerPosition.y);
 	cout << playerChar;
 }
-void Player::playerErase(){
+void Player::playerErase()const{
 	gotoxy(playerPosition.x, playerPosition.y);
 	cout << ' ';
 }
@@ -75,7 +56,7 @@ void Player::playerErase(){
 void Player::playerMove(){
 	playerErase();
 
-	switch (playerDirection.value){
+	switch (playerDirection){
 	case Direction::UP:
 		if (playerPosition.y > Point::minY)
 			playerPosition.y--;
