@@ -75,6 +75,7 @@ int main(){
 	else
 		cout << "false" << endl;
 
+	/*
 	Direction dr1;
 	dr1.value = Direction::DOWN;
 	Player p1('#', dr1,Point(0,0));
@@ -133,6 +134,7 @@ int main(){
 		cout << "Direction is RIGHT" << endl;
 		break;
 	}
+	*/
 	
 	//===================
 	// E N D   T E S T

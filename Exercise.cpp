@@ -39,7 +39,7 @@ Exercise::Exercise(int currentLvl){
 		action = '*';
 		result = leftNum * rightNum;
 		if (numToHide == 0){
-			strExercise = "_" + to_string(action) + string(1, action) + "=" + to_string(result);
+			strExercise = "_" + string(1, action) + to_string(rightNum) + "=" + to_string(result);
 			hiddenNumber = leftNum;
 		}
 		else{
