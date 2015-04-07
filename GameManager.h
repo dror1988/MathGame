@@ -40,6 +40,10 @@ class GameManager
 	unsigned int iterationsPerClockCycle;
 	const static unsigned int KEYBOARD_HIT_LOOP = 10;  // const static can be initialized like this! :-)
 	const static char ESC = 27; // the ESC key
+	//Begin code change
+	const static unsigned int CLOCK_TICKS_PER_LEVEL = 1500;
+	unsigned int clockTicksCurrentLevel;
+	//End code change
 public:
 	GameManager(ISpecificGame& theSpecificGame, unsigned int clockCycleLengthInMillisec, unsigned int numIterationsPerClockCycle)
 		:actualGame(theSpecificGame), currentLevel(0), clockCycleInMillisec(clockCycleLengthInMillisec), iterationsPerClockCycle(numIterationsPerClockCycle) {}

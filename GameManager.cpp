@@ -278,6 +278,7 @@ bool GameManager::playGame()
 char GameManager::playNextLevel()
 {
 	++currentLevel;
+	clockTicksCurrentLevel = 0;
 	actualGame.startLevel();
 	//in start level we need to create a new SCREEN object that gets the following for creation:
 	//Screen newScreen(int level,Player &p1, Player &p2)
@@ -304,6 +305,7 @@ char GameManager::playNextLevel()
 		case GameManager::LevelOptions::REPLAY_LEVEL:
 			// keepRunning is true, so we only need to set thing right and then - keepRunning!
 			//--------------------------------------------------------------------------------
+			clockTicksCurrentLevel = 0;
 			actualGame.startLevel();
 			break;
 		case GameManager::LevelOptions::BACK_TO_MAIN_MENU:
@@ -339,6 +341,7 @@ char GameManager::doLevelIterations()
 	//---------------------------------------
 	while(!actualGame.isLevelDone() && !escapePressed) {
 		escapePressed = !doIteration();
+		clockTicksCurrentLevel++;
 	}
 	//-----------------------------------------------------
 	// END of game iterations loop or exit on ESC

@@ -44,6 +44,13 @@ Exercise* Player::createExercise(int currentLevel){
 		return NULL;
 }
 
+bool isPlayerAlive()const{
+	return playerAlive;
+}
+bool isPlayerDone()const{
+	return playerDone;
+}
+
 void Player::playerDraw() const{
 	gotoxy(playerPosition.x, playerPosition.y);
 	cout << playerChar;
