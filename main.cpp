@@ -106,9 +106,7 @@ int main(){
 	p1.setPosition(Point(9,8));
 	p1.changeDirection(Direction::LEFT);
 
-	po1.x=79;
-	po1.y = 23;
-	p1.setPosition(po1);
+	p1.setPosition(Point(20,20));
 	po1 = p1.getPosition();
 	cout << "p1.x=" << po1.x << " p1.y=" << po1.y << endl;
 
@@ -129,9 +127,10 @@ int main(){
 		break;
 	}
 	
+	_getch();
 
 	//run on screen code
-	clear_screen();
+	//clear_screen();
 	char ch = 0;/*
 	while (ch != 27){
 		if (_kbhit()){
@@ -198,7 +197,9 @@ int main(){
 				break;
 			}
 		}
+		p1.playerErase();
 		p1.playerReverseMove();
+		p1.playerDraw();
 		Sleep(100);
 	}
 

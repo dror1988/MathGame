@@ -25,6 +25,7 @@
 #define _GAME_MANAGER_H_
 
 #include "ISpecificGame.h"
+#include <iostream>
 #include <string>
 #include <list>
 
@@ -57,6 +58,7 @@ private:
 	bool doInputIteration();
 
 	//Edited code here
+	void chooseLevelToStart();
 	void printInstructions() const;
 	char subMenu() const;
 	void clearSubMenu() const;
