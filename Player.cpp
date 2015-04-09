@@ -44,10 +44,10 @@ Exercise* Player::createExercise(int currentLevel){
 		return NULL;
 }
 
-bool isPlayerAlive()const{
+bool Player::isPlayerAlive(){
 	return playerAlive;
 }
-bool isPlayerDone()const{
+bool Player::isPlayerDone(){
 	return playerDone;
 }
 

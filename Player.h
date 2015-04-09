@@ -39,8 +39,8 @@ public:
 	void changeDirection(Direction::VALUE newDirection);
 	Exercise* createExercise(int currentLevel);
 
-	bool isPlayerAlive()const;
-	bool isPlayerDone()const;
+	bool isPlayerAlive();
+	bool isPlayerDone();
 
 	void playerDraw()const;
 	void playerErase()const;

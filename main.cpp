@@ -47,18 +47,18 @@ class TheMathGame: public ISpecificGame
 {
 public:
 	virtual bool isLevelDone()const{
-		bool bothPlayersAlive = p1.isPlayerAlive() && p2.isPlayerAlive();
+		/*bool bothPlayersAlive = p1.isPlayerAlive() && p2.isPlayerAlive();
 		bool playerNotDone = p1.isPlayerDone() || p2.isPlayerDone();
-		if (clockTicksCurrentLevel < CLOCK_TICKS_PER_LEVEL && bothPlayersAlive && !playerNotDone)
+		if (clockTicksCurrentLevel < CLOCK_TICKS_PER_LEVEL && bothPlayersAlive && !playerNotDone)*/
 			return false;
-		else
-			return true;
+		/*else
+			return true;*/
 	}
 	virtual bool hasNextLevel()const{
-		if (GameManager::currentLevel < 20)
+		/*if (GameManager::currentLevel < 20)*/
 			return true;
-		else
-			return false;
+		/*else
+			return false;*/
 	}
 	virtual void startLevel(){}
 	virtual void doIteration(const list<char>& keyHits){}
