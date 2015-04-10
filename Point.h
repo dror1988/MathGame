@@ -15,8 +15,15 @@ public:
 
 	int x;
 	int y;
-	Point(int x=0, int y=0):x(x),y(y){
+	Point(int x, int y) :x(x), y(y)
+	{
 	}
+	Point()
+	{
+		x = (rand() % 80);
+		y = (rand() % 21 + 3);
+	}
+	
 };
 
 #endif

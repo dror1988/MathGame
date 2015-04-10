@@ -80,6 +80,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\Color.h" />
     <ClInclude Include="..\..\config.h" />
+    <ClInclude Include="..\..\Number.h" />
     <ClInclude Include="..\..\Direction.h" />
     <ClInclude Include="..\..\Exercise.h" />
     <ClInclude Include="..\..\GameManager.h" />
@@ -87,13 +88,19 @@
     <ClInclude Include="..\..\ISpecificGame.h" />
     <ClInclude Include="..\..\Player.h" />
     <ClInclude Include="..\..\Point.h" />
+    <ClInclude Include="..\..\screenMatrix.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Exercise.cpp" />
     <ClCompile Include="..\..\GameManager.cpp" />
     <ClCompile Include="..\..\io_utils.cpp" />
     <ClCompile Include="..\..\main.cpp" />
+    <ClCompile Include="..\..\Number.cpp" />
     <ClCompile Include="..\..\Player.cpp" />
+    <ClCompile Include="..\..\screenMatrix.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

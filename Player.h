@@ -1,5 +1,5 @@
-#ifndef __PLAYER_H
-#define __PLAYER_H
+#ifndef _PLAYER_H
+#define _PLAYER_H
 
 #include <string>
 #include "Direction.h"

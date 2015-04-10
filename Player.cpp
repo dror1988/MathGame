@@ -116,6 +116,8 @@ void Player::playerReverseMove(){
 		break;
 	case Direction::STAY:
 		break;
+	default:
+		break;
 	}
 
 	//playerDraw();
