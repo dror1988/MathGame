@@ -46,8 +46,20 @@ using namespace std;
 class TheMathGame: public ISpecificGame
 {
 public:
-	virtual bool isLevelDone()const{return false;}
-	virtual bool hasNextLevel()const{return true;}
+	virtual bool isLevelDone()const{
+		/*bool bothPlayersAlive = p1.isPlayerAlive() && p2.isPlayerAlive();
+		bool playerNotDone = p1.isPlayerDone() || p2.isPlayerDone();
+		if (clockTicksCurrentLevel < CLOCK_TICKS_PER_LEVEL && bothPlayersAlive && !playerNotDone)*/
+			return false;
+		/*else
+			return true;*/
+	}
+	virtual bool hasNextLevel()const{
+		/*if (GameManager::currentLevel < 20)*/
+			return true;
+		/*else
+			return false;*/
+	}
 	virtual void startLevel(){}
 	virtual void doIteration(const list<char>& keyHits){}
 	virtual void doSubIteration(){}
@@ -131,7 +143,7 @@ int main(){
 
 	//run on screen code
 	//clear_screen();
-	char ch = 0;/*
+	char ch = 0;
 	while (ch != 27){
 		if (_kbhit()){
 			ch = _getch();
@@ -160,13 +172,16 @@ int main(){
 				break;
 			}
 		}
+		p1.playerErase();
 		p1.playerMove();
+		p1.playerDraw();
 		Sleep(100);
 	}
-	*/
+	
 	//end of run on screen code
 
 	//run reverse on screen code
+	/*
 	clear_screen();
 	ch = 0;
 	while (ch != 27){
@@ -201,7 +216,7 @@ int main(){
 		p1.playerReverseMove();
 		p1.playerDraw();
 		Sleep(100);
-	}
+	}*/
 
 	//end of run reverse on screen code
 	

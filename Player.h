@@ -12,13 +12,14 @@ class Player{
 	unsigned char playerChar;
 	unsigned int playerScore;
 	unsigned int playerLives;
-	bool isPlayerAlive;
+	bool playerAlive;
+	bool playerDone;
 	Direction::VALUE playerDirection;
 	Exercise* playerExercise;
 	Point playerPosition;
 public:
 	Player(unsigned char playerChar, Direction::VALUE playerDirection, Point playerPosition)
-		:playerChar(playerChar), playerScore(0), playerLives(3), isPlayerAlive(true), playerDirection(playerDirection),
+		:playerChar(playerChar), playerScore(0), playerLives(3), playerAlive(true), playerDone(false), playerDirection(playerDirection),
 		playerPosition(playerPosition), playerExercise(NULL){
 	}
 	~Player(){
@@ -37,6 +38,9 @@ public:
 	Point setPosition(Point newPosition);
 	void changeDirection(Direction::VALUE newDirection);
 	Exercise* createExercise(int currentLevel);
+
+	bool isPlayerAlive();
+	bool isPlayerDone();
 
 	void playerDraw()const;
 	void playerErase()const;
