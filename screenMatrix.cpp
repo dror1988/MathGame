@@ -17,7 +17,8 @@ screenMatrix::~screenMatrix(){
 	{
 		for (int j = 0; j < 80; j++)
 		{
-			if(matrix[i][j] != NULL)
+			if (matrix[i][j] != NULL)
+				delete matrix[i][j];
 				matrix[i][j] = NULL;
 		}
 	}
@@ -34,7 +35,8 @@ void screenMatrix::createNumber(int currentLevel){
 		{
 			Point numPosition;
 			if (numPosition != p1.getPosition && numPosition != p2.getPosition && matrix[numPosition.y][numPosition.x] == NULL
-				&& matrix[numPosition.y + 1][numPosition.x] == NULL && matrix[numPosition.y][numPosition.x + 1] == NULL)
+				&& matrix[numPosition.y + 1][numPosition.x] == NULL && matrix[numPosition.y][numPosition.x + 1] == NULL
+				&& matrix[numPosition.y - 1][numPosition.x] == NULL && matrix[numPosition.y][numPosition.x - 1] == NULL)
 			{
 				Number *newOne = new Number;
 				*newOne->setIsOnes = true;
@@ -49,6 +51,31 @@ void screenMatrix::createNumber(int currentLevel){
 	else if (num >= 10)
 	{
 		while (isSuccess == false && triesCounter <= 10)
+		{
+			Point tensPosition;
+			Point onesPosition(tensPosition.x + 1, tensPosition.y);
+			if ((tensPosition != p1.getPosition && tensPosition != p2.getPosition && matrix[tensPosition.y][tensPosition.x] == NULL
+				&& matrix[tensPosition.y + 1][tensPosition.x] == NULL && matrix[tensPosition.y][tensPosition.x + 1] == NULL
+				&& matrix[tensPosition.y - 1][tensPosition.x] == NULL && matrix[tensPosition.y][tensPosition.x - 1] == NULL)
+				&& (onesPosition != p1.getPosition && onesPosition != p2.getPosition && matrix[onesPosition.y][onesPosition.x] == NULL
+				&& matrix[onesPosition.y + 1][onesPosition.x] == NULL && matrix[onesPosition.y][onesPosition.x + 1] == NULL
+				&& matrix[onesPosition.y - 1][onesPosition.x] == NULL && matrix[onesPosition.y][onesPosition.x - 1] == NULL)
+				&& onesPosition.x <= onesPosition.maxX)
+			{
+				Number *newTens = new Number;
+				Number *newOnes = new Number;
+				*newTens->setIsTens = true;
+				*newTens->setNum = num/10;
+				*newTens->setNumberPosition = tensPosition;
+				*newTens->setIsOnes = true;
+				*newTens->setNum = num % 10;
+				*newTens->setNumberPosition = onesPosition;
+				isSuccess = true;
+			}
+			else
+				triesCounter++;
+
+		}
 
 	}
 }
@@ -76,6 +103,8 @@ void screenMatrix::eraseMatrix(){
 		{
 			if (matrix[i][j] != NULL)
 			{
+				delete matrix[i][j];
+				matrix[i][j] = NULL;
 				gotoxy(j, i);
 				cout << ' ';
 			}
