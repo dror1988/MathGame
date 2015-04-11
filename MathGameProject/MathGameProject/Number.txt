@@ -1,0 +1,29 @@
+#ifndef __NUMBER_H
+#define __NUMBER_H
+
+#include "Data.h"
+
+class Number
+{
+	Data* pData;
+	Number *prev, *next;
+public:
+	Number(const Data& data) :pData(new Data(data)), prev(0), next(0){}
+	Number() :pData(0), prev(0), next(0){}
+
+	~Number()
+	{
+		delete pData;
+		delete next;
+	}
+
+	Number* getNext(){ return next; }
+	Number* getPrev(){ return prev; }
+	Data* getData(){ return pData; }
+
+	void setNext(Number* next){ this->next = next; }
+	void setPrev(Number* prev){ this->prev = prev; }
+
+};
+
+#endif

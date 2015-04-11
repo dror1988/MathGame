@@ -10,6 +10,30 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Color.h" />
+    <ClInclude Include="config.h" />
+    <ClInclude Include="Direction.h" />
+    <ClInclude Include="Exercise.h" />
+    <ClInclude Include="GameManager.h" />
+    <ClInclude Include="io_utils.h" />
+    <ClInclude Include="ISpecificGame.h" />
+    <ClInclude Include="Number.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Point.h" />
+    <ClInclude Include="screenMatrix.h" />
+    <ClInclude Include="StatusBar.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Exercise.cpp" />
+    <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="io_utils.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Number.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="screenMatrix.cpp" />
+    <ClCompile Include="StatusBar.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{DDDEA84D-A69E-4A49-91D0-24029E403B80}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -19,7 +43,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -77,31 +101,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Color.h" />
-    <ClInclude Include="..\..\config.h" />
-    <ClInclude Include="..\..\Number.h" />
-    <ClInclude Include="..\..\Direction.h" />
-    <ClInclude Include="..\..\Exercise.h" />
-    <ClInclude Include="..\..\GameManager.h" />
-    <ClInclude Include="..\..\io_utils.h" />
-    <ClInclude Include="..\..\ISpecificGame.h" />
-    <ClInclude Include="..\..\Player.h" />
-    <ClInclude Include="..\..\Point.h" />
-    <ClInclude Include="..\..\screenMatrix.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\Exercise.cpp" />
-    <ClCompile Include="..\..\GameManager.cpp" />
-    <ClCompile Include="..\..\io_utils.cpp" />
-    <ClCompile Include="..\..\main.cpp" />
-    <ClCompile Include="..\..\Number.cpp" />
-    <ClCompile Include="..\..\Player.cpp" />
-    <ClCompile Include="..\..\screenMatrix.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\ClassDiagram.cd" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
