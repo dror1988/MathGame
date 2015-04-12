@@ -354,8 +354,8 @@ char GameManager::doLevelIterations()
 
 	// check why we are here
 	if(actualGame.isLevelDone()) {
-		clear_screen();
-		cout << endl << "WELL DONE" << endl;
+		//clear_screen();
+		//cout << endl << "WELL DONE" << endl;
 		_getch();
 		action = GameManager::LevelOptions::NEXT_LEVEL;
 	}

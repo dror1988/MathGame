@@ -1,7 +1,7 @@
 #include "StatusBar.h"
 
 void StatusBar::drawStatusBar(){
-	setTextColor(LIGHTBLUE);
+	setTextColor(LIGHTCYAN);
 	{ //Print 1st Line in Status Bar
 		gotoxy(0,0);
 		cout<<"Player-@ ,Lives:"<<p1.getLives()<<" ,Score:"<<p1.getScore();
@@ -29,7 +29,7 @@ void StatusBar::drawStatusBar(){
 
 }
 void StatusBar::updatePlayerLife(unsigned int playerNumber){
-	setTextColor(LIGHTBLUE);
+	setTextColor(LIGHTCYAN);
 	if (playerNumber==1){
 		gotoxy(16,0);
 		cout<<p1.getLives();
@@ -42,7 +42,7 @@ void StatusBar::updatePlayerLife(unsigned int playerNumber){
 }
 
 void StatusBar::updateTimeLeft(){
-	setTextColor(LIGHTBLUE);
+	setTextColor(LIGHTCYAN);
 	gotoxy(42,0);
 	cout<< "   ";
 	gotoxy(42,0);

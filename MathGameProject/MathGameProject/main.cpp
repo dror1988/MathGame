@@ -70,8 +70,36 @@ public:
 		bool playerNotDone = player1.getPlayerDone() || player2.getPlayerDone();
 		if (clockTicksCurrentLevel < CLOCK_TICKS_PER_LEVEL && alivePlayer && !playerNotDone)
 			return false;
-		else
+		else{
+			clear_screen();
+			setTextColor(YELLOW);
+			if (clockTicksCurrentLevel >= CLOCK_TICKS_PER_LEVEL){
+				gotoxy(33, 12);
+				cout << "Time is up!!!";
+				gotoxy(29, 13);
+				cout<< "Try better next time!!";
+			}
+			else if (!alivePlayer){
+				gotoxy(28, 12);
+				cout << "Both Players are dead!!!";
+				gotoxy(29, 13);
+				cout<< "Try better next time!!";
+			}
+			else if (player1.getPlayerDone() && !player2.getPlayerDone()){
+				gotoxy(33, 12);
+				cout << "Player1 WIN!!";
+			}
+			else if (player2.getPlayerDone() && !player1.getPlayerDone()){
+				gotoxy(33, 12);
+				cout << "Player2 WIN!!";
+			}
+			else{
+				gotoxy(35, 12);
+				cout << "Its a TIE";
+			}
+			setTextColor(WHITE);
 			return true;
+		}
 	}
 	virtual bool hasNextLevel()const{
 		if (currentLevel <= 20)
