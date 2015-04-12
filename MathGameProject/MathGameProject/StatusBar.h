@@ -10,15 +10,18 @@ using namespace std;
 
 class StatusBar{
 	unsigned int timeLeft;
-	const int &currentLevel;
+	unsigned int currentLevel;
 	const Player &p1;
 	const Player &p2;
 public:
-	StatusBar(const Player &player1, const Player &player2,const int &currentLevel)
-		:p1(player1),p2(player2),currentLevel(currentLevel),timeLeft(300){
+	StatusBar(const Player &player1, const Player &player2)
+		:p1(player1),p2(player2),currentLevel(0),timeLeft(300){
 	}
 	void setTimeLeft(unsigned int newTimeLeft){
 		timeLeft=newTimeLeft;
+	}
+	void setCurrentLevel(unsigned int newCurrentLevel){
+		currentLevel = newCurrentLevel;
 	}
 	void decTimeLeft(){
 		--timeLeft;

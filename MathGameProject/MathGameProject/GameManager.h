@@ -60,7 +60,7 @@ private:
 	//Edited code here
 	void chooseLevelToStart();
 	void printInstructions() const;
-	char subMenu() const;
+	void subMenu() const;
 	void clearSubMenu() const;
 	//End of edited code
 
@@ -77,8 +77,7 @@ public:
 			PRESENT_INSTRUCTIONS		=	'1',
 			PLAY_GAME					=	'2',
 			PLAY_FROM_SELECTED_SCREEN	=	'3',
-			EXIT_APPLICATION			=	'9',
-			PRINT_SUB_MENU              =   '0'
+			EXIT_APPLICATION			=	'9'
 		};
 	};
 	class LevelOptions

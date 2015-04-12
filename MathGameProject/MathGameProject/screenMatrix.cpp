@@ -28,6 +28,7 @@ void screenMatrix::createNumber(int currentLevel){
 		while (isSuccess == false && triesCounter < 10)
 		{
 			Point numPosition;
+			//numPosition.comparePoints(p1.getPosition()) && numPosition.comparePoints(p2.getPosition())
 			if (numPosition.x != p1.getPosition().x && numPosition.y != p1.getPosition().y
 				&& numPosition.x != p2.getPosition().x && numPosition.y != p2.getPosition().y
 				&& matrix[numPosition.y][numPosition.x] == NULL
@@ -99,7 +100,6 @@ void screenMatrix::createNumber(int currentLevel){
 }
 
 void screenMatrix::printMatrix(){
-	setTextColor(LIGHTRED);
 	for (int i = 0; i < 24; i++)
 	{
 		for (int j = 0; j < 80; j++)
@@ -111,8 +111,6 @@ void screenMatrix::printMatrix(){
 			}
 		}
 	}
-
-	setTextColor(WHITE);
 
 	p1.playerDraw();
 	p2.playerDraw();

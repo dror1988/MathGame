@@ -57,7 +57,13 @@ public:
 	TheMathGame():
 		player1('@', Direction::RIGHT, Point(10, 9)),
 		player2('#', Direction::LEFT, Point(70, 9)),
-		currentLevel(0),myScreen(player1,player2),stBar(player1,player2,currentLevel){
+		currentLevel(0),myScreen(player1,player2),stBar(player1,player2){
+	}
+	void printCurrentScreen(){
+		clear_screen();
+		setTextColor(WHITE);
+		stBar.drawStatusBar();
+		myScreen.printMatrix();
 	}
 	virtual bool isLevelDone(){
 		bool alivePlayer = player1.isPlayerAlive() || player2.isPlayerAlive();
@@ -75,7 +81,6 @@ public:
 	}
 	virtual void startLevel(int level){
 		clear_screen();
-		currentLevel=level;
 		clockTicksCurrentLevel = 0;
 		player1.setLives(3);
 		player2.setLives(3);
@@ -92,6 +97,7 @@ public:
 		player2.resetPlayerAlive();
 		player2.resetPlayerDone();
 		stBar.setTimeLeft(300);
+		stBar.setCurrentLevel(level);
 		stBar.drawStatusBar();
 		myScreen.eraseMatrix();
 	}

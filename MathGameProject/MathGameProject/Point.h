@@ -2,6 +2,7 @@
 #define __POINT_H
 
 #include <iostream>
+
 using namespace std;
 
 class Point{
@@ -15,15 +16,15 @@ public:
 
 	int x;
 	int y;
-	Point(int x, int y) :x(x), y(y)
-	{
+	Point(int x, int y) :x(x), y(y){
 	}
-	Point()
-	{
+	Point(){
 		x = (rand() % 80);
 		y = (rand() % 21 + 3);
 	}
-	
+	bool comparePoints(Point const &otherPoint){
+		return (x == otherPoint.x && y == otherPoint.y);
+	}
 };
 
 #endif

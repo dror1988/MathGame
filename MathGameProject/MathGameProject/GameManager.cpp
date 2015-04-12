@@ -84,16 +84,14 @@ void GameManager::run()
 		case GameManager::MainMenuOptions::EXIT_APPLICATION:
 			userWantsToPlay = false;
 			break;
-		case GameManager::MainMenuOptions::PRINT_SUB_MENU:
-			subMenu();
-			break;
+
 		default: // normally we shouldn't get to here...
 			userWantsToPlay = false;
 		};
 	}
 }
 
-char  GameManager::subMenu() const{
+void  GameManager::subMenu() const{
 	setTextColor(RED);
 	gotoxy(28, 9);
 
@@ -115,7 +113,7 @@ char  GameManager::subMenu() const{
 		cout << " ========================= ";
 	}
 
-	char selection = 0;
+	/*char selection = 0;
 	do {
 		selection = _getch();
 	} while(!GameManager::LevelOptions::isValidOption(selection));
@@ -124,6 +122,13 @@ char  GameManager::subMenu() const{
 	clear_screen();
 
 	return selection;
+	*/
+
+	setTextColor(WHITE);
+}
+
+void GameManager::clearSubMenu() const{
+	actualGame.printCurrentScreen();
 }
 
 void GameManager::printInstructions() const{
@@ -307,9 +312,12 @@ char GameManager::playNextLevel()
 			actualGame.startLevel(currentLevel);
 			break;
 		case GameManager::LevelOptions::BACK_TO_MAIN_MENU:
+			//mainMenu();
+			keepRunning = false;
+			break;
 		case GameManager::LevelOptions::EXIT_APPLICATION:
 			// get out from the loop
-			clear_screen();
+			//clear_screen();
 			keepRunning = false;
 			break;
 		case GameManager::LevelOptions::NEXT_LEVEL:
@@ -348,6 +356,7 @@ char GameManager::doLevelIterations()
 	if(actualGame.isLevelDone()) {
 		clear_screen();
 		cout << endl << "WELL DONE" << endl;
+		_getch();
 		action = GameManager::LevelOptions::NEXT_LEVEL;
 	}
 	else if(escapePressed) {
@@ -357,6 +366,7 @@ char GameManager::doLevelIterations()
 			action = _getch();
 		} while(!GameManager::LevelOptions::isValidOption(action));
 	}
+	clearSubMenu();
 	// end of esc pressed
 	// TODO: clear the sub menu options from screen
 	return action;
