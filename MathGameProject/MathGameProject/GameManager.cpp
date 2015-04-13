@@ -61,7 +61,6 @@ void GameManager::run()
 
 	while(userWantsToPlay) {
 		char menuSelection = mainMenu();
-		// TODO: handle here all the different menu options
 		switch(menuSelection)
 		{
 		case GameManager::MainMenuOptions::PLAY_GAME:
@@ -69,9 +68,6 @@ void GameManager::run()
 			userWantsToPlay = playGame();
 			break;
 		case GameManager::MainMenuOptions::PLAY_FROM_SELECTED_SCREEN:
-			//should use chooseLevelToStart() function to print a dialog from which level to start the game
-			//and to init GameManager::currentLevel to the specific level
-			//We need to add creation of 2 players in here
 			chooseLevelToStart();
 			userWantsToPlay = playGame();
 			break;
@@ -109,17 +105,6 @@ void  GameManager::subMenu() const{
 		gotoxy(28, 16);
 		cout << " ========================= ";
 	}
-
-	/*char selection = 0;
-	do {
-		selection = _getch();
-	} while(!GameManager::LevelOptions::isValidOption(selection));
-
-	setTextColor(WHITE);
-	clear_screen();
-
-	return selection;
-	*/
 
 	setTextColor(WHITE);
 }
@@ -265,9 +250,6 @@ bool GameManager::playGame()
 	// this is the game LEVELS loop
 	//-------------------------------------------------------------
 	// we run as long as the user wants
-
-	//Player player1('@', Direction::RIGHT, Point(10, 9)), player2('#', Direction::LEFT, Point(70, 9));
-	//screenMatrix myScreen(player1, player2);
 
 	char action = GameManager::LevelOptions::NEXT_LEVEL;
 	while(actualGame.hasNextLevel() && action == GameManager::LevelOptions::NEXT_LEVEL) {

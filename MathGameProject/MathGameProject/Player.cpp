@@ -32,7 +32,7 @@ Point Player::setPosition(Point newPosition){
 	playerPosition = newPosition;
 	return playerPosition;
 }
-void Player::changeDirection(Direction::VALUE newDirection){
+Direction::VALUE Player::changeDirection(Direction::VALUE newDirection){
 	playerDirection = newDirection;
 }
 Exercise* Player::createExercise(int currentLevel){
