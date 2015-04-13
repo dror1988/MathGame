@@ -49,6 +49,7 @@ public:
 
 	//NEW CODE EX1, author=dror moyal, date=12/4/15
 	virtual void printCurrentScreen() = 0;
+	virtual void resetAll() = 0;
 };
 
 #endif

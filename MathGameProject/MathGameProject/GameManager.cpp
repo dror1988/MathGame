@@ -58,9 +58,6 @@ char GameManager::mainMenu()const
 void GameManager::run()
 {
 	bool userWantsToPlay = true;
-	// we run as long as the user wants
-	Player player1('@', Direction::RIGHT, Point(10, 9)), player2('#', Direction::LEFT, Point(70, 9));
-	screenMatrix myScreen(player1,player2);
 
 	while(userWantsToPlay) {
 		char menuSelection = mainMenu();
@@ -267,6 +264,11 @@ bool GameManager::playGame()
 	//-------------------------------------------------------------
 	// this is the game LEVELS loop
 	//-------------------------------------------------------------
+	// we run as long as the user wants
+
+	//Player player1('@', Direction::RIGHT, Point(10, 9)), player2('#', Direction::LEFT, Point(70, 9));
+	//screenMatrix myScreen(player1, player2);
+
 	char action = GameManager::LevelOptions::NEXT_LEVEL;
 	while(actualGame.hasNextLevel() && action == GameManager::LevelOptions::NEXT_LEVEL) {
 		action = playNextLevel();
@@ -275,6 +277,16 @@ bool GameManager::playGame()
 	// END of game LEVELS loop
 	//-------------------------------------------------------------
 	
+	if (!actualGame.hasNextLevel()){
+		actualGame.resetAll();
+		clear_screen();
+		setTextColor(YELLOW);
+		gotoxy(36, 12);
+		cout << "The End!";
+		setTextColor(WHITE);
+		_getch();
+	}
+
 	// return true if the user wants to keep playing
 	return (action != GameManager::LevelOptions::EXIT_APPLICATION);
 }

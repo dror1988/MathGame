@@ -51,6 +51,7 @@ class TheMathGame: public ISpecificGame
 	screenMatrix myScreen;
 	StatusBar stBar;
 	const static unsigned int CLOCK_TICKS_PER_LEVEL = 1500;
+	const static unsigned int MAX_LEVEL = 20;
 	unsigned int clockTicksCurrentLevel;
 public:
 	TheMathGame():
@@ -63,6 +64,11 @@ public:
 		setTextColor(WHITE);
 		stBar.drawStatusBar();
 		myScreen.printMatrix();
+	}
+	virtual void resetAll(){
+		player1.setScore(0);
+		player2.setScore(0);
+		currentLevel = 0;
 	}
 	virtual bool isLevelDone(){
 		bool alivePlayer = player1.isPlayerAlive() || player2.isPlayerAlive();
@@ -101,13 +107,14 @@ public:
 		}
 	}
 	virtual bool hasNextLevel()const{
-		if (currentLevel <= 20)
+		if (currentLevel < MAX_LEVEL)
 			return true;
 		else
 			return false;
 	}
 	virtual void startLevel(int level){
 		clear_screen();
+		currentLevel = level;
 		clockTicksCurrentLevel = 0;
 		player1.setLives(3);
 		player2.setLives(3);
@@ -124,7 +131,7 @@ public:
 		player2.resetPlayerAlive();
 		player2.resetPlayerDone();
 		stBar.setTimeLeft(300);
-		stBar.setCurrentLevel(level);
+		stBar.setCurrentLevel(currentLevel);
 		stBar.drawStatusBar();
 		myScreen.eraseMatrix();
 	}
