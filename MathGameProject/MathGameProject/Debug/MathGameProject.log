@@ -1,9 +1,15 @@
-﻿Build started 4/12/2015 1:41:23 PM.
+﻿Build started 4/13/2015 9:52:42 AM.
      1>Project "C:\Users\drorm\Desktop\MathGame\MathGameProject\MathGameProject\MathGameProject.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt StatusBar.cpp main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Exercise.cpp GameManager.cpp Player.cpp StatusBar.cpp main.cpp screenMatrix.cpp
          main.cpp
+         Generating Code...
+         Compiling...
+         screenMatrix.cpp
          StatusBar.cpp
+         Player.cpp
+         GameManager.cpp
+         Exercise.cpp
          Generating Code...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\drorm\Desktop\MathGame\MathGameProject\MathGameProject\Debug\MathGameProject.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\drorm\Desktop\MathGame\MathGameProject\MathGameProject\Debug\MathGameProject.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\drorm\Desktop\MathGame\MathGameProject\MathGameProject\Debug\MathGameProject.lib" /MACHINE:X86 Debug\Exercise.obj
@@ -20,4 +26,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.52
+Time Elapsed 00:00:05.04

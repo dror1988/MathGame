@@ -26,7 +26,6 @@
 //
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
@@ -405,13 +404,10 @@ int main(){
 	// E N D   T E S T
 	//===================
 */
-	GameManager(TheMathGame(), 200, 2).run();
+	TheMathGame MyGame;
+	GameManager(MyGame, (unsigned int)200, (unsigned int)2).run();
 	return 0;
 }
 //==========================
 // E n d   o f   M  A  I  N
 //==========================
-
-
-
-//Maya Change

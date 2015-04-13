@@ -8,7 +8,7 @@ using namespace std;
 	int _getch(void){return 0;}
 	int _kbhit(void){return 0;}
 	void Sleep(unsigned long){}
-	void setTextColor(int color){}
+	void setTextColor(Color color){}
 	void hideCursor(){}
 	void clear_screen(){}
 #else
@@ -43,5 +43,3 @@ void clear_screen()
 }
 
 #endif
-
-

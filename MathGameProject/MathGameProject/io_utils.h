@@ -18,7 +18,7 @@ void clear_screen();
 		int _kbhit(void);
 		void Sleep(unsigned long);
 		void _itoa_s(unsigned int, char s[], unsigned int, int);
-		void setTextColor(int);
+		void setTextColor(Color);
 	#else
 		#include <stdlib.h>
 		#include <conio.h>

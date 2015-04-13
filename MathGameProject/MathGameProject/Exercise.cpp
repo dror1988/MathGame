@@ -3,7 +3,10 @@
 Exercise::Exercise(int currentLvl){
 	//temp variable to help and choose the "+,-,/,*" according to rand function
 	int chooseAction = rand() % 4;
-	
+
+	char strNumber1[4];
+	char strNumber2[4];
+
 	numToHide = rand() % 2;
 	leftNum = rand() % (10 + currentLvl) + 1;
 	rightNum = rand() % (10 + currentLvl) + 1;
@@ -13,11 +16,15 @@ Exercise::Exercise(int currentLvl){
 		action = '+';
 		result = leftNum + rightNum;
 		if (numToHide == 0){
-			strExercise = "_" + string(1,action) + to_string(static_cast<long long>(rightNum)) + "=" + to_string(static_cast<long long>(result));
+			_itoa_s(rightNum, strNumber1, sizeof(strNumber1), 10);
+			_itoa_s(result, strNumber2, sizeof(strNumber2), 10);
+			strExercise = "_" + string(1, action) + strNumber1 + "=" + strNumber2;
 			hiddenNumber = leftNum;
 		}
 		else{
-			strExercise = to_string(static_cast<long long>(leftNum)) + string(1, action) + "_" + "=" + to_string(static_cast<long long>(result));
+			_itoa_s(leftNum, strNumber1, sizeof(strNumber1), 10);
+			_itoa_s(result, strNumber2, sizeof(strNumber2), 10);
+			strExercise = strNumber1 + string(1, action) + "_" + "=" + strNumber2;
 			hiddenNumber = rightNum;
 		}
 		break;
@@ -27,11 +34,15 @@ Exercise::Exercise(int currentLvl){
 		rightNum = leftNum;
 		leftNum = result + rightNum; // according to the "targil" logic
 		if (numToHide == 0){
-			strExercise = to_string(static_cast<long long>(leftNum)) + string(1, action) + to_string(static_cast<long long>(rightNum)) + "=" + "_";
+			_itoa_s(leftNum, strNumber1, sizeof(strNumber1), 10);
+			_itoa_s(rightNum, strNumber2, sizeof(strNumber2), 10);
+			strExercise = strNumber1 + string(1, action) + strNumber2 + "=" + "_";
 			hiddenNumber = result;
 		}
 		else{
-			strExercise = to_string(static_cast<long long>(leftNum)) + string(1, action) + "_" + "=" + to_string(static_cast<long long>(result));
+			_itoa_s(leftNum, strNumber1, sizeof(strNumber1), 10);
+			_itoa_s(result, strNumber2, sizeof(strNumber2), 10);
+			strExercise = strNumber1 + string(1, action) + "_" + "=" + strNumber2;
 			hiddenNumber = rightNum;
 		}
 		break;
@@ -39,11 +50,15 @@ Exercise::Exercise(int currentLvl){
 		action = '*';
 		result = leftNum * rightNum;
 		if (numToHide == 0){
-			strExercise = "_" + string(1,action) + to_string(static_cast<long long>(rightNum)) + "=" + to_string(static_cast<long long>(result));
+			_itoa_s(rightNum, strNumber1, sizeof(strNumber1), 10);
+			_itoa_s(result, strNumber2, sizeof(strNumber2), 10);
+			strExercise = "_" + string(1, action) + strNumber1 + "=" + strNumber2;
 			hiddenNumber = leftNum;
 		}
 		else{
-			strExercise = to_string(static_cast<long long>(leftNum)) + string(1, action) + "_" + "=" + to_string(static_cast<long long>(result));
+			_itoa_s(leftNum, strNumber1, sizeof(strNumber1), 10);
+			_itoa_s(result, strNumber2, sizeof(strNumber2), 10);
+			strExercise = strNumber1 + string(1, action) + "_" + "=" + strNumber2;
 			hiddenNumber = rightNum;
 		}
 		break;
@@ -53,11 +68,15 @@ Exercise::Exercise(int currentLvl){
 		rightNum = leftNum;
 		leftNum = result * rightNum; // according to the "targil" logic
 		if (numToHide == 0){
-			strExercise = to_string(static_cast<long long>(leftNum)) + string(1, action) + to_string(static_cast<long long>(rightNum)) + "=" + "_";
+			_itoa_s(leftNum, strNumber1, sizeof(strNumber1), 10);
+			_itoa_s(rightNum, strNumber2, sizeof(strNumber2), 10);
+			strExercise = strNumber1 + string(1, action) + strNumber2 + "=" + "_";
 			hiddenNumber = result;
 		}
 		else{
-			strExercise = to_string(static_cast<long long>(leftNum)) + string(1, action) + "_" + "=" + to_string(static_cast<long long>(result));
+			_itoa_s(leftNum, strNumber1, sizeof(strNumber1), 10);
+			_itoa_s(result, strNumber2, sizeof(strNumber2), 10);
+			strExercise = strNumber1 + string(1, action) + "_" + "=" + strNumber2;
 			hiddenNumber = rightNum;
 		}
 		break;
