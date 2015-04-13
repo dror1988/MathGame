@@ -8,6 +8,7 @@ using namespace std;
 	int _getch(void){return 0;}
 	int _kbhit(void){return 0;}
 	void Sleep(unsigned long){}
+	void _itoa_s(unsigned int, char s[], unsigned int, int){}
 	void setTextColor(Color color){}
 	void hideCursor(){}
 	void clear_screen(){}
