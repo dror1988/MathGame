@@ -32,6 +32,7 @@ Point Number::setNumberPosition(Point newPosition){
 	return numberPosition;
 }
 
+//Prints a numbe in position
 void Number::Print(){
 	gotoxy(numberPosition.x, numberPosition.y);
 	cout << Num << endl;

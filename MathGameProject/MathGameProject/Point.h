@@ -18,10 +18,12 @@ public:
 	int y;
 	Point(int x, int y) :x(x), y(y){
 	}
-	Point(){
+	Point(){ //Construct point with random x, y values
 		x = (rand() % 80);
 		y = (rand() % 21 + 3);
 	}
+	
+	//Compare point x and y values
 	bool comparePoints(Point const &otherPoint){
 		return (x == otherPoint.x && y == otherPoint.y);
 	}

@@ -209,7 +209,7 @@ void GameManager::printInstructions() const{
 		cout << endl;
 		cout << "                    Authors of the game are:                               " << endl;
 		cout << "                     * Dror Moyal 301821682                                " << endl;
-		cout << "                     * Maya Bugana                                         " << endl;
+		cout << "                     * Maya Bugana 203889050                                        " << endl;
 		gotoxy(0, 23);
 		cout << "Press any key to go back to Main Menu...";
 	}
