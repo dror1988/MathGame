@@ -1,3 +1,25 @@
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// StatusBar.cpp
+// -----------
+// This file declares a class presents and updates the first 3 rows in the play screen.
+//
+// Author: Dror Moyal
+// First version: 2015-04-11
+// 
+// This code is part of a solution for "the math game" excercise in C++ course, Semester B 2015
+// at the Academic College of Tel-Aviv-Yaffo.
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Changes and additions:
+// ------------------------
+// DATE           Authors                 Change / Addition
+// ----           --------                -----------------
+// 2015-04-08     Dror Moyal      implemented the Player class
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++
+// "NEW CODE EX1, author=Dror Moyal, date=2015-04-08
+// +++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 #include "StatusBar.h"
 
 void StatusBar::drawStatusBar(){
@@ -28,6 +50,9 @@ void StatusBar::drawStatusBar(){
 	setTextColor(WHITE);
 
 }
+//===================================
+//updates and prints player life value
+//===================================
 void StatusBar::updatePlayerLife(unsigned int playerNumber){
 	setTextColor(LIGHTCYAN);
 	if (playerNumber==1){
@@ -40,7 +65,9 @@ void StatusBar::updatePlayerLife(unsigned int playerNumber){
 	}
 	setTextColor(WHITE);
 }
-
+//===================================
+//updates and prints time left value
+//===================================
 void StatusBar::updateTimeLeft(){
 	setTextColor(LIGHTCYAN);
 	gotoxy(42,0);
@@ -49,3 +76,8 @@ void StatusBar::updateTimeLeft(){
 	cout<<timeLeft;
 	setTextColor(WHITE);
 }
+
+
+//+++++++++++++++++++++
+// END of NEW CODE EX1
+//+++++++++++++++++++++

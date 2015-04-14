@@ -1,3 +1,24 @@
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// screenMatrix.cpp
+// -----------
+// This file declares a class to manage the creation, apperaence and disapperaence of numbers and players exist on the screen.
+//
+// Author: Maya Bugana
+// First version: 2015-04-10
+// 
+// This code is part of a solution for "the math game" excercise in C++ course, Semester B 2015
+// at the Academic College of Tel-Aviv-Yaffo.
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Changes and additions:
+// ------------------------
+// DATE           Authors                 Change / Addition
+// ----           --------                -----------------
+// 2015-04-10    Maya Bugana     implemented the screenMatrix class
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++
+// "NEW CODE EX1, author=Maya Bugana, date=2015-04-10
+// +++++++++++++++++++++++++++++++++++++++++++++++++
+
 #include "screenMatrix.h"
 
 screenMatrix::~screenMatrix(){
@@ -12,14 +33,19 @@ screenMatrix::~screenMatrix(){
 	}
 }
 
+//===================================
 //check if number exist in the screen
+//===================================
 bool screenMatrix::isNumberExist(Point numberPosition){
 	if (matrix[numberPosition.y][numberPosition.x]!=NULL)
 		return true;
 	return false;
 }
 
-//Create new Number in case that all conditions are fullfilled
+//===================================
+//Create new Number in case that all 
+//conditions are fulfilled
+//===================================
 void screenMatrix::createNumber(int currentLevel){
 	int triesCounter = 0;
 	bool isSuccess = false;
@@ -100,7 +126,9 @@ void screenMatrix::createNumber(int currentLevel){
 	}
 }
 
+//===================================
 //Prints all Numbers exist in the screen
+//===================================
 void screenMatrix::printMatrix(){
 	for (int i = 0; i < 24; i++)
 	{
@@ -118,6 +146,9 @@ void screenMatrix::printMatrix(){
 	p2.playerDraw();
 }
 
+//===================================
+//deletes all Numbers in the Matrix
+//===================================
 void screenMatrix::eraseMatrix(){
 	for (int i = 0; i < 24; i++)
 	{
@@ -134,13 +165,19 @@ void screenMatrix::eraseMatrix(){
 	}
 }
 
-//Deletes a number in a specific position on the screen
+//===================================
+//Deletes a number in a specific 
+//position on the screen
+//===================================
 void screenMatrix::eraseNumberInPos(Point numberPosition){
 	delete matrix[numberPosition.y][numberPosition.x];
 	matrix[numberPosition.y][numberPosition.x]=NULL;
 }
 
-//Return the number in position and deletes it from screen
+//===================================
+//Return the number in position and 
+//deletes it from screen
+//===================================
 unsigned int screenMatrix::getNumberInPos(Point numberPosition){
 	unsigned int returnNum;
 	if (!matrix[numberPosition.y][numberPosition.x]->getIsOnes() && !matrix[numberPosition.y][numberPosition.x]->getIsTens()){
@@ -167,3 +204,7 @@ unsigned int screenMatrix::getNumberInPos(Point numberPosition){
 		}
 	}
 }
+
+//+++++++++++++++++++++
+// END of NEW CODE EX1
+//+++++++++++++++++++++
