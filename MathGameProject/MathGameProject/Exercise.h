@@ -1,3 +1,14 @@
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Exercise.h
+// -----------
+// This file declares a class to manage an exercise. 
+//
+// Author: Dror Moyal
+// First version: 2015-04-11
+// 
+// This code is part of a solution for "the math game" excercise in C++ course, Semester B 2015
+// at the Academic College of Tel-Aviv-Yaffo.
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // Changes and additions:
 // ------------------------
 // DATE           Authors                 Change / Addition

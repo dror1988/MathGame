@@ -15,12 +15,18 @@
 // ------------------------
 // DATE           Authors                 Change / Addition
 // ----           --------                -----------------
+// 2015-04-09     Dror Moyal			 implemented the menues
+// 2015-04-09     Dror Moyal			 implemented the the managing of the game
+
 // In the file itself, add above each change/addition a remark saying: "NEW CODE EX1, author=<name>, date=<YYYY-MM-DD>"
 // and close it at the end with a remark saying "END of NEW CODE EX1" 
 //
 //
-
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++
+// "NEW CODE EX1, author=Dror Moyal, date=2015-04-09
+// +++++++++++++++++++++++++++++++++++++++++++++++++
 
 #include <list>
 #include "GameManager.h"
@@ -241,6 +247,10 @@ void GameManager::chooseLevelToStart(){
 	clear_screen();
 }
 
+//+++++++++++++++++++++
+// END of NEW CODE EX1
+//+++++++++++++++++++++
+
 bool GameManager::playGame()
 {
 	clear_screen();
@@ -259,6 +269,11 @@ bool GameManager::playGame()
 	// END of game LEVELS loop
 	//-------------------------------------------------------------
 	
+
+	// +++++++++++++++++++++++++++++++++++++++++++++++++
+	// "NEW CODE EX1, author=Dror Moyal, date=2015-04-09
+	// +++++++++++++++++++++++++++++++++++++++++++++++++
+
 	if (!actualGame.hasNextLevel()){
 		actualGame.resetAll();
 		clear_screen();
@@ -269,6 +284,10 @@ bool GameManager::playGame()
 		_getch();
 	}
 
+	//+++++++++++++++++++++
+	// END of NEW CODE EX1
+	//+++++++++++++++++++++
+
 	// return true if the user wants to keep playing
 	return (action != GameManager::LevelOptions::EXIT_APPLICATION);
 }
@@ -278,9 +297,6 @@ char GameManager::playNextLevel()
 {
 	++currentLevel;
 	actualGame.startLevel(currentLevel);
-	//in start level we need to create a new SCREEN object that gets the following for creation:
-	//Screen newScreen(int level,Player &p1, Player &p2)
-
 	
 	//------------------------------------------------------------------------------
 	// here we control the ESC menu
@@ -306,12 +322,10 @@ char GameManager::playNextLevel()
 			actualGame.startLevel(currentLevel);
 			break;
 		case GameManager::LevelOptions::BACK_TO_MAIN_MENU:
-			//mainMenu();
 			keepRunning = false;
 			break;
 		case GameManager::LevelOptions::EXIT_APPLICATION:
 			// get out from the loop
-			//clear_screen();
 			keepRunning = false;
 			break;
 		case GameManager::LevelOptions::NEXT_LEVEL:
@@ -348,11 +362,13 @@ char GameManager::doLevelIterations()
 
 	// check why we are here
 	if(actualGame.isLevelDone()) {
-		//clear_screen();
-		//cout << endl << "WELL DONE" << endl;
 		_getch();
 		action = GameManager::LevelOptions::NEXT_LEVEL;
 	}
+
+	// +++++++++++++++++++++++++++++++++++++++++++++++++
+	// "NEW CODE EX1, author=Dror Moyal, date=2015-04-09
+	// +++++++++++++++++++++++++++++++++++++++++++++++++
 	else if(escapePressed) {
 		action = 0;
 		subMenu();
@@ -361,8 +377,11 @@ char GameManager::doLevelIterations()
 		} while(!GameManager::LevelOptions::isValidOption(action));
 	}
 	clearSubMenu();
+	//+++++++++++++++++++++
+	// END of NEW CODE EX1
+	//+++++++++++++++++++++
 	// end of esc pressed
-	// TODO: clear the sub menu options from screen
+
 	return action;
 }
 

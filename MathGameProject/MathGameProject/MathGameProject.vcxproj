@@ -23,6 +23,7 @@
     <ClInclude Include="Point.h" />
     <ClInclude Include="screenMatrix.h" />
     <ClInclude Include="StatusBar.h" />
+    <ClInclude Include="TheMathGame.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Exercise.cpp" />
@@ -33,6 +34,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="screenMatrix.cpp" />
     <ClCompile Include="StatusBar.cpp" />
+    <ClCompile Include="TheMathGame.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{DDDEA84D-A69E-4A49-91D0-24029E403B80}</ProjectGuid>
@@ -43,7 +45,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v100</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">

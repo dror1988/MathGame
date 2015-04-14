@@ -15,6 +15,9 @@
 // ------------------------
 // DATE           Authors                 Change / Addition
 // ----           --------                -----------------
+// 2015-04-09     Dror Moyal			 implemented the menues
+// 2015-04-09     Dror Moyal			 implemented the the managing of the game
+
 // In the file itself, add above each change/addition a remark saying: "NEW CODE EX1, author=<name>, date=<YYYY-MM-DD>"
 // and close it at the end with a remark saying "END of NEW CODE EX1" 
 //
@@ -57,12 +60,16 @@ private:
 	bool doIteration();
 	bool doInputIteration();
 
-	//Edited code here
+	// +++++++++++++++++++++++++++++++++++++++++++++++++
+	// "NEW CODE EX1, author=Dror Moyal, date=2015-04-09
+	// +++++++++++++++++++++++++++++++++++++++++++++++++
 	void chooseLevelToStart();
 	void printInstructions() const;
 	void subMenu() const;
 	void clearSubMenu() const;
-	//End of edited code
+	//+++++++++++++++++++++
+	// END of NEW CODE EX1
+	//+++++++++++++++++++++
 
 public:
 	class MainMenuOptions

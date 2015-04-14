@@ -1,3 +1,14 @@
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Player.h
+// -----------
+// This file declares a class to manage a player includeing its score, number of lives, position, direction etc.
+//
+// Author: Dror Moyal
+// First version: 2015-04-11
+// 
+// This code is part of a solution for "the math game" excercise in C++ course, Semester B 2015
+// at the Academic College of Tel-Aviv-Yaffo.
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // Changes and additions:
 // ------------------------
 // DATE           Authors                 Change / Addition
@@ -15,6 +26,7 @@
 #include "Direction.h"
 #include "Exercise.h"
 #include "Point.h"
+#include "io_utils.h"
 
 using namespace std;
 
@@ -76,27 +88,36 @@ public:
 	// create a new one
 	//===========================
 	void resetExercise(){
+		// if there is an exercise 
 		if (playerExercise!=NULL){
 			delete playerExercise;
 			playerExercise=NULL;
 		}
 	}
-
+	// verify if player is alive according to the number
+	// of lives he has left
 	bool isPlayerAlive();
+	// reset the value of player alive
 	void resetPlayerAlive(){
 		playerAlive=true;
 	}
+	// verify if a player is done according to the
+	// number he ate
 	bool isPlayerDone(unsigned int eatenNumber);
+	// player done getter
 	bool getPlayerDone();
+	// reset the value of player done
 	void resetPlayerDone(){
 		playerDone=false;
 	}
-
+	// print a player in his position on screen
 	void playerDraw()const;
+	// erase a player from his position on screen
 	void playerErase()const;
 	
-	//Function that computes the movement of a player according to the players direction
+	// computes the movement of a player according to the players direction
 	void playerMove();
+	// verify if a move is legal according to the other players position
 	bool isMoveLegal(Point otherPlayerPos);
 };
 
